@@ -38,7 +38,8 @@ const map = new maplibregl.Map({
         //maxzoom: 16,
         // リソースへのURL
         //url: "pmtiles://http://localhost/webapp/maplibre/PMTiles/yamagata.pmtiles",
-        url: "pmtiles://http://localhost/japan.pmtiles",
+        //url: "pmtiles://http://localhost/japan.pmtiles",
+        url: "pmtiles://japan.pmtiles",
         attribution:
           "© MapTiler © OpenStreetMap contributors",
       },
