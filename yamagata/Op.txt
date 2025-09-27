@@ -1,0 +1,21 @@
+●tippecanoe
+
+WSL2から実行
+
+cd /mnt/e/webapp/maplibre/PMTiles/yamagata
+
+rm -f yamagata.pmtiles
+
+●高ズームにしないとポイントがほとんど表示されない
+tippecanoe -f -o yamagata.pmtiles -l yamagata_layer 06_山形県.json
+
+tippecanoe ‐-force -o yamagata.pmtiles -Z0 -z10 -pf -pk -l yamagata_layer 06_山形県.json
+tippecanoe ‐-force -o yamagata.pmtiles -Z0 -z5  -pf -pk -l yamagata_layer 06_山形県.json
+
+http://localhost/webapp/maplibre/PMTiles/yamagata/yamagata.html
+
+http://memopad.bitter.jp/webapp/maplibre/PMTiles/yamagata/yamagata.html
+
+
+
+http://localhost/webapp/maplibre/PMTiles/yamagata/zenn-example.html
