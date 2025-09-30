@@ -12,7 +12,8 @@ const map = new maplibregl.Map({
     // スタイル仕様のバージョン番号。8を指定する
     version: 8,
     // データソース
-    glyphs: 'https://cdn.jsdelivr.net/gh/maptiler/fonts@v1.0.0/fonts/{fontstack}/{range}.pbf',
+    //glyphs: 'https://cdn.jsdelivr.net/gh/maptiler/fonts@v1.0.0/fonts/{fontstack}/{range}.pbf',
+    glyphs: "https://demotiles.maplibre.org/font/{fontstack}/{range}.pbf",
     sources: {
       // 背景地図 OpenStreetMapのラスタタイル
       "background-osm-raster": {
