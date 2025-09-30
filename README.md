@@ -61,4 +61,15 @@ https://hikagetombo.github.io/PMTiles-Example/yamagata/yamagata.html
 
 https://hikagetombo.github.io/PMTiles-Example/japan/japan.html
 
-現在、日本全体の山岳を表示し、ズームレベルを上げると愛知県や中国地方の一部が表示されないという不具合が発生しています。PMTiles の使用法に問題があると思われます。設定値を替えテスト中ですのでご了承名がいます。
+現在、日本全体の山岳を表示し、ズームレベルを上げると愛知県や中国地方の一部が表示されないという不具合が発生しています。PMTiles の使用法に問題があると思われます。設定値を替えテスト中ですのでご了承願います。
+
+原因は、`glyphs` の設定でした。
+開発環境の console に、或るズームレベルを超えると `glyphs` に **404 NotFound** のエラーが発生するので
+それを別のものに置き換えたところ全ての地域が正常に表示されるようになりました。
+変更箇所は次の通りです。
+```js
+// (変更前)
+    glyphs: 'https://cdn.jsdelivr.net/gh/maptiler/fonts@v1.0.0/fonts/{fontstack}/{range}.pbf',
+// (変更後)
+    glyphs: "https://demotiles.maplibre.org/font/{fontstack}/{range}.pbf",
+```
