@@ -117,14 +117,19 @@ map.on('click', 'yamagata_points', function (e) {
 
     const feature = e.features[0];
     const coord = feature.geometry.coordinates;
-    const { 山名, 別名, 標高, 所在 } = feature.properties;
+    const { 山名, かな, 別名, 標高, 所在, 隣接, 名山, 備考 } = feature.properties;
 
     const htmlContent = `
         <div>
             <p><strong>${山名}</strong><br>
+            かな：${かな}<br>
             別名：${別名 || 'なし'}<br>
+            緯度：${coord[1]}<br>
+            経度：${coord[0]}<br>
             標高：${標高}m<br>
-            所在地：${所在}</p>
+            所在地：${所在}<br>
+            隣接：${隣接 || 'なし'}<br>
+            名山：${名山}</p>
         </div>
     `;
 

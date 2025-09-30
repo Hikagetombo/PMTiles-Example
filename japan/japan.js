@@ -6,7 +6,7 @@ maplibregl.addProtocol("pmtiles", protocol.tile);
 
 const map = new maplibregl.Map({
   container: "map",
-  center: [138.7272942, 35.36078488], // 中心座標
+  center: [140.21050429762454, 38.52931708848691], // 中心座標
   zoom: 6, // ズームレベル
   style: {
     // スタイル仕様のバージョン番号。8を指定する
@@ -25,7 +25,8 @@ const map = new maplibregl.Map({
           'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
         ],
         // タイルの解像度。単位はピクセル、デフォルトは512
-        tileSize: 256,
+        //tileSize: 256,
+        tileSize: 512,
         // データの帰属
         attribution:
           //"<a href='https://www.openstreetmap.org/copyright' target='_blank'>© OpenStreetMap contributors</a>",
@@ -90,7 +91,8 @@ const map = new maplibregl.Map({
           layout: {
               'icon-image': '', //アイコン画像は使わない
               'text-font': ['Noto Sans Regular'], // 表示するフォント
-              'text-size': ['interpolate',['linear'],['zoom'],5,8,8,11,15,18], //テキストサイズはズームレベルに応じて指定
+              //'text-size': ['interpolate',['linear'],['zoom'],5,8,8,11,15,18], //テキストサイズはズームレベルに応じて指定
+              'text-size': 11, //テキストサイズはズームレベルに応じて指定
               'text-anchor': 'top', // テキストのアンカーを上部に設定
               'text-offset': [0, 0.5], // マーカーからの相対的な位置 (Y軸方向に下に1em)
               'text-field': ['format',['get', '山名'],{'text-color':'#0000FF'}] // '山名'プロパティをテキストとして表示
@@ -117,14 +119,19 @@ map.on('click', 'japan_points', function (e) {
 
     const feature = e.features[0];
     const coord = feature.geometry.coordinates;
-    const { 山名, 別名, 標高, 所在 } = feature.properties;
+    const { 山名, かな, 別名, 標高, 所在, 隣接, 名山, 備考 } = feature.properties;
 
     const htmlContent = `
         <div>
             <p><strong>${山名}</strong><br>
+            かな：${かな}<br>
             別名：${別名 || 'なし'}<br>
+            緯度：${coord[1]}<br>
+            経度：${coord[0]}<br>
             標高：${標高}m<br>
-            所在地：${所在}</p>
+            所在地：${所在}<br>
+            隣接：${隣接 || 'なし'}<br>
+            名山：${名山}</p>
         </div>
     `;
 
@@ -151,4 +158,16 @@ map.on('mouseleave', 'yamagata_points', function(e) {
     // この行を追加して、e.featuresの中身を確認
     //console.log("e.features:", e.features);
     map.getCanvas().style.cursor = '';
+});
+
+map.on('load', () => {
+    const currentZoom = map.getZoom();
+    console.log("Current zoom level:", currentZoom);
+});
+
+// You can also get the zoom level at any point after the map has loaded
+// For example, in response to a user interaction or an event:
+map.on('zoomend', () => {
+    const newZoom = map.getZoom();
+    console.log("Zoom level after change:", newZoom);
 });
