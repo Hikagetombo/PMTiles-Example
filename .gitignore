@@ -1,6 +1,8 @@
 *.txt
 *.pmtiles
 *.json
+*.geojson
 ./yamagata/main.js
 ./yamagata/zenn-example.html
 tools/*.*
+maplibre.code-workspace
