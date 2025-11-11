@@ -81,6 +81,6 @@ https://hikagetombo.github.io/PMTiles-Example/japan/japan.html
 
 ●避難所検索
 
-https://hikagetombo.github.io/PMTiles-Example/Geocode/index.html
+https://hikagetombo.github.io/PMTiles-Example/Geocode/Shelter/index.html
 
 PMTiles から緯度、経度をどのように取得するか分からないので、キーワードと経度・緯度を持つJSON ファイルを読み込んでいます。
