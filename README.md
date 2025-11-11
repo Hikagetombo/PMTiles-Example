@@ -76,7 +76,7 @@ https://hikagetombo.github.io/PMTiles-Example/japan/japan.html
 
 ## Geocode
 地図に検索機能を追加した例を、[第10回「防災マップの作成⑤避難所の検索」](https://zenn.dev/mierune_inc/books/location-engineering/viewer/part10)
-を元に作成しました。
+を基に作成しました。
 検索キーに「中学校」、「コミュニティー」などを入力すると該当する避難所のデータが表示される筈です。（「小学校」がなぜか表示されない。調査中）
 
 ●避難所検索
