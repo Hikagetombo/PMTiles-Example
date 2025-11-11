@@ -73,3 +73,14 @@ https://hikagetombo.github.io/PMTiles-Example/japan/japan.html
 // (変更後)
     glyphs: "https://demotiles.maplibre.org/font/{fontstack}/{range}.pbf",
 ```
+
+## Geocode
+地図に検索機能を追加した例を、[第10回「防災マップの作成⑤避難所の検索」](https://zenn.dev/mierune_inc/books/location-engineering/viewer/part10)
+を元に作成しました。
+検索キーに「中学校」、「コミュニティー」などを入力すると該当する避難所のデータが表示される筈です。（「小学校」がなぜか表示されない。調査中）
+
+●避難所検索
+
+https://hikagetombo.github.io/PMTiles-Example/Geocode/index.html
+
+PMTiles から緯度、経度をどのように取得するか分からないので、キーワードと経度・緯度を持つJSON ファイルを読み込んでいます。
