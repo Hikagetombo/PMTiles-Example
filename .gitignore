@@ -1,8 +1,18 @@
+back/*,*
+.gitignore
 *.txt
-*.pmtiles
-*.json
-*.geojson
+maplibre.code-workspace
+
+# pmtiles 個別指定
+japan_z0-15.pmtiles
+
+# json 個別指定
+package.json
+package-lock.json
+tsconfig.json
+hinanjo-chiba.json
+
+yamagataMountPoint.json
 ./yamagata/main.js
 ./yamagata/zenn-example.html
 tools/*.*
-maplibre.code-workspace
