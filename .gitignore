@@ -16,3 +16,4 @@ yamagataMountPoint.json
 ./yamagata/main.js
 ./yamagata/zenn-example.html
 tools/*.*
+facility/facility.json
