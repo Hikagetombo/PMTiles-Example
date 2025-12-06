@@ -17,3 +17,4 @@ yamagataMountPoint.json
 ./yamagata/zenn-example.html
 tools/*.*
 facility/facility.json
+地図記号/*.*
