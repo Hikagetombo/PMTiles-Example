@@ -5,17 +5,17 @@ let protocol = new pmtiles.Protocol();
 maplibregl.addProtocol("pmtiles", protocol.tile);
 
 const CATEGORY_CONFIG = {
-  '3': { label: '建物', color: '#FF5722' },
-  '9': { label: 'その他', color: '#9E9E9E' },
-  '11': { label: '国の機関', color: '#3F51B5' },
+  '3' : { label: '建物',         color: '#FF5722' },
+  '9' : { label: 'その他',       color: '#9E9E9E' },
+  '11': { label: '国の機関',     color: '#3F51B5' },
   '12': { label: '地方公共団体', color: '#2196F3' },
-  '13': { label: '厚生機関', color: '#00BCD4' },
-  '14': { label: '警察機関', color: '#673AB7' },
-  '15': { label: '消防署', color: '#F44336' },
-  '16': { label: '学校', color: '#4CAF50' },
-  '17': { label: '病院', color: '#E91E63' },
-  '18': { label: '郵便局', color: '#FF9800' },
-  '19': { label: '福祉施設', color: '#8BC34A' }
+  '13': { label: '厚生機関',     color: '#00BCD4' },
+  '14': { label: '警察機関',     color: '#673AB7' },
+  '15': { label: '消防署',       color: '#F44336' },
+  '16': { label: '学校',         color: '#4CAF50' },
+  '17': { label: '病院',         color: '#E91E63' },
+  '18': { label: '郵便局',       color: '#FF9800' },
+  '19': { label: '福祉施設',     color: '#8BC34A' }
 };
 
 const map = new maplibregl.Map({
@@ -82,8 +82,8 @@ const map = new maplibregl.Map({
           'circle-color': [
             'match',
             ['to-string', ['get', 'P02_002']], // Convert P02_002 to string for comparison
-            '3', CATEGORY_CONFIG['3'].color,
-            '9', CATEGORY_CONFIG['9'].color,
+            '3',  CATEGORY_CONFIG['3'].color,
+            '9',  CATEGORY_CONFIG['9'].color,
             '11', CATEGORY_CONFIG['11'].color,
             '12', CATEGORY_CONFIG['12'].color,
             '13', CATEGORY_CONFIG['13'].color,
